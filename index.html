@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment 14</title>
+<script src="http://code.jquery.com/jquery-latest.js"> </script>
+<link rel="stylesheet" href="styles.css">
+<script src="jcanvas.mini.js"> </script>
+<script>
+
+
+$(document).ready(function(){
+
+
+	let aboutBtn = document.getElementById("instruct_btn");
+    let about = document.getElementById("instruct_body");
+    about.style.display = "none";
+
+	aboutBtn.addEventListener("click", function(){
+		if (about.style.display === "none") {
+            about.style.display = "block";
+        } else {
+            about.style.display = "none";
+        }
+	});
+
+
+	var thisColor = "#9c9c9c";
+	
+	$("canvas").drawRect({
+		layer:true,
+		fillStyle:'#46722A',
+		strokeWidth:2,
+		x:300, y:450,
+		width:50, height:50,
+		//draggable:true,
+		bringToFront:true,
+		
+		click:function(layer){
+			thisColor = "#46722A";
+			$(this).animateLayer(layer,{scale: '+=.1', fillStyle:thisColor,
+			});
+			$(this).animateLayer(layer,{scale: '-=.1'
+			});
+		}
+	});
+	
+	$("canvas").drawRect({
+		layer:true,
+		fillStyle:'#FFB400',
+		strokeWidth:2,
+		x:400, y:450,
+		width:50, height:50,
+		//draggable:true,
+		bringToFront:true,
+		
+		click:function(layer){
+			thisColor = "#FFB400";
+			$(this).animateLayer(layer,{scale: '+=.1', fillStyle:thisColor,
+			});
+			$(this).animateLayer(layer,{scale: '-=.1'
+			});
+		}
+	});
+	
+		$("canvas").drawRect({
+		layer:true,
+		fillStyle:'#00A6ED',
+		strokeWidth:2,
+		x:500, y:450,
+		width:50, height:50,
+		//draggable:true,
+		bringToFront:true,
+		
+		click:function(layer){
+			thisColor = "#00A6ED";
+			$(this).animateLayer(layer,{scale: '+=.1', fillStyle:thisColor,
+			});
+			$(this).animateLayer(layer,{scale: '-=.1'
+			});
+
+		}
+	});
+	
+		$("canvas").drawRect({
+		layer:true,
+		fillStyle:'#F6511D',
+		strokeWidth:2,
+		x:600, y:450,
+		width:50, height:50,
+		//draggable:true,
+		bringToFront:true,
+		
+		click:function(layer){
+			thisColor = "#F6511D";
+			$(this).animateLayer(layer,{scale: '+=.1', fillStyle:thisColor,
+			});
+			$(this).animateLayer(layer,{scale: '-=.1'
+			});
+		}
+	});
+
+	for (var i = 0; i < 900; i += 160) {
+		$("canvas").drawPolygon({
+		layer:true,
+		fillStyle:thisColor,
+		x:i, y:200,
+		radius:50,
+		sides:6,
+		projection:-0.5,
+		mouseover: function(layer) {
+			$(this).animateLayer(layer,{rotate: '+=0', fillStyle:thisColor
+    	}, 10);
+		}
+	});
+	}
+
+	for (var i = 0; i < 900; i += 160) {
+		$("canvas").drawPolygon({
+		layer:true,
+		fillStyle:thisColor,
+		x:i, y:294,
+		radius:50,
+		sides:6,
+		projection:-0.5,
+		mouseover: function(layer) {
+			$(this).animateLayer(layer,{rotate: '+=0', fillStyle:thisColor
+    	}, 10);
+		}
+	});
+	}
+
+	for (var i = 0; i < 900; i += 160) {
+		$("canvas").drawPolygon({
+		layer:true,
+		fillStyle:thisColor,
+		x:i, y:105,
+		radius:50,
+		sides:6,
+		projection:-0.5,
+		mouseover: function(layer) {
+			$(this).animateLayer(layer,{rotate: '+=0', fillStyle:thisColor
+    	}, 10);
+		}
+	});
+	}
+
+	for (var i = 0; i < 900; i += 160) {
+		$("canvas").drawPolygon({
+		layer:true,
+		fillStyle:thisColor,
+		x:i + 80, y:246,
+		radius:50,
+		sides:6,
+		projection:-0.5,
+		mouseover: function(layer) {
+			$(this).animateLayer(layer,{rotate: '+=0', fillStyle:thisColor
+    	}, 10);
+		}
+	});
+	}
+
+	for (var i = 0; i < 900; i += 160) {
+		$("canvas").drawPolygon({
+		layer:true,
+		fillStyle:thisColor,
+		x:i + 80, y:152,
+		radius:50,
+		sides:6,
+		projection:-0.5,
+		mouseover: function(layer) {
+			$(this).animateLayer(layer,{rotate: '+=0', fillStyle:thisColor
+    	}, 10);
+		}
+	});
+	}
+
+});
+</script>
+
+</head>
+<body>
+<h1>Color Game - Assignment 14</h1>
+<h3>Nathanael Han</h3>
+<canvas id="myCanvas" width="900" height="500"> </canvas>
+<div class="instructions">
+	<p id="instruct_btn">About</p>
+	<p id="instruct_body">
+		How to play: 
+
+		<br>
+		<br>
+		Click on a color then mouse over the hexagons — the hexagons will change to the selected color! 
+		<br>
+		<br>
+		Assignment 14:
+
+		<br>
+		<br>
+		One change I made to the original game was to use 6 instead of 5 sides. Using hexagons allowed me to tile the canvas without gaps — I implemented this by drawing the polygons within for loops. Instead of using the "click" event listener, I used "mouseover" to change the color when a hexagon is hovered over. I also added an animation when the colors are selected; when a rectangle is clicked, it increases in scale, then decreases back to the original size. Additionally, I resized and centered the canvas, and I used coolors.com to find a color scheme. 
+
+	</p>
+ </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Roboto+Flex:opsz@8..144&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
+
+body{
+    background-color: #a5a5a5;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+h1, h3{
+    font-family: 'Oxanium', cursive;
+    text-align: center;
+
+}
+
+#instruct_btn{
+    font-family: 'Oxanium', cursive;
+    font-weight: 500;
+    font-size: 110%;
+    text-align: center;
+	background-color: #252524;
+	color: #EDE7E3;
+	width: 30%;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: solid #2c4e7b 3px;
+	opacity: 95%;
+	user-select: none;
+}
+
+#instruct_btn:hover {
+	transform: scale(1.01);
+}
+
+#instruct_body{
+	font-size: 130%;
+	background-color: #D3D5D4;
+	color: #433A3F;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: solid #C69C72 3px;
+	opacity: 95%;
+	user-select: none;
+    display:none;
+}
+
+
+#myCanvas{
+    background-color:#0D2C54;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
